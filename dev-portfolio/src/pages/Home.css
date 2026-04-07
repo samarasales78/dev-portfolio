@@ -1,0 +1,146 @@
+.purple {
+  background: linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.home {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.line {
+  font-size: 32px;
+  color: white;
+  opacity: 0;
+  margin: 0;
+}
+
+.line-top {
+  transform: translateY(-40px);
+  animation: slideDown 0.8s ease forwards;
+}
+
+.line-bottom {
+  transform: translateY(40px);
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.name {
+  font-size: 80px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-150px);
+  animation: slideRight 0.8s ease forwards;
+  animation-delay: 0.8s;
+  margin: 0;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideRight 0.8s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.icons img {
+  width: 40px;
+  filter: invert(42%) sepia(78%) saturate(600%) hue-rotate(240deg) brightness(100%) contrast(100%);
+  transition: 0.3s;
+}
+
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.hero-right img {
+  width: 50px;
+  transition: 0.3s;
+}
+
+.hero-right img:hover {
+  transform: scale(1.2);
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #a855f7;
+
+  width: 0;
+  animation: typingLoop 10s steps(40, end) infinite,
+             blink 0.9s step-end infinite;
+  animation-delay: 1s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typingLoop {
+  0% {
+    width: 0;
+  }
+
+  40% {
+    width: 100%; /* terminou */
+  }
+
+  60% {
+    width: 100%; /* pausa */
+  }
+
+  100% {
+    width: 0; /* apaga */
+  }
+}
