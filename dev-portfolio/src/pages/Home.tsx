@@ -28,6 +28,10 @@ export function Home() {
             <img src="https://img.icons8.com/?size=100&id=447&format=png&color=000000" />
           </a>
         </div>
+
+        <a href="/cv.pdf" download className="btn-cv">
+          Baixar CV
+        </a>
       </div>
 
     </section>

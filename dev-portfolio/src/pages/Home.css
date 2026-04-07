@@ -144,3 +144,39 @@
     width: 0; /* apaga */
   }
 }
+
+.btn-cv {
+  margin-top: 25px;
+  padding: 10px 20px;
+
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  border-radius: 1000px;
+
+  background: black; 
+  
+  border: 2px solid transparent;
+
+  /* gradiente na borda */
+  background-image: linear-gradient(black, black),
+                    linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  transition: 0.3s;
+
+  width: fit-content;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.btn-cv:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+}
