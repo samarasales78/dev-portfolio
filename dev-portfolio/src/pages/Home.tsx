@@ -2,7 +2,7 @@ import './home.css'
 
 export function Home() {
   return (
-    <section className="home">
+    <section id="home" className="home">
       <div className="hero-left">
         <p className="line line-top">
           Olá, meu nome é
