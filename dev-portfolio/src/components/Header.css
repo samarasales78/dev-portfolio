@@ -1,19 +1,22 @@
 .header {
   background: #000000;
-  padding: 20px;
-  position: relative; 
+  padding: 20px 40px;
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
 }
 
 .logo {
   font-size: 40px;
   font-weight: bold;
-  margin-left: 20px; 
+  margin: 0;
 
   opacity: 0;
   transform: translateX(-150px);
   animation: slideRight 0.8s ease forwards;
+  z-index: 1002;
 }
 
 .logo-white {
@@ -21,17 +24,13 @@
 }
 
 .logo-purple {
-  color: #a855f7; 
+  color: #a855f7;
 }
 
-/* navbar*/
 .nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 .nav-item {
@@ -51,6 +50,46 @@
 .nav-item:nth-child(3) { animation-delay: 0.7s; }
 .nav-item:nth-child(4) { animation-delay: 0.9s; }
 
+.nav-item:hover {
+  color: #a855f7;
+  transition: 0.3s;
+}
+
+/* botao do menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 999px;
+  transition: 0.3s ease;
+}
+
+/* animação no X */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ANIMAÇÕES */
 @keyframes slideUp {
   to {
     opacity: 1;
@@ -65,7 +104,55 @@
   }
 }
 
-.nav-item:hover {
-  color: #a855f7;
-  transition: 0.3s;
+/* adaptation */
+@media (max-width: 900px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 34px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    left: 20px;
+
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 18px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+  }
+
+  .nav.nav-open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .nav-item {
+    font-size: 18px;
+    letter-spacing: 1px;
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

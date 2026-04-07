@@ -3,7 +3,6 @@ import './home.css'
 export function Home() {
   return (
     <section className="home">
-
       <div className="hero-left">
         <p className="line line-top">
           Olá, meu nome é
@@ -20,12 +19,18 @@ export function Home() {
         </p>
 
         <div className="icons">
-          <a href="#">
-            <img src="https://img.icons8.com/?size=100&id=12598&format=png&color=000000" />
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://img.icons8.com/?size=100&id=12598&format=png&color=000000"
+              alt="GitHub"
+            />
           </a>
 
-          <a href="#">
-            <img src="https://img.icons8.com/?size=100&id=447&format=png&color=000000" />
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://img.icons8.com/?size=100&id=447&format=png&color=000000"
+              alt="LinkedIn"
+            />
           </a>
         </div>
 
@@ -34,6 +39,13 @@ export function Home() {
         </a>
       </div>
 
+      <div className="hero-right">
+        <img
+          src="/pixel-art.png"
+          alt="Pixel Art Samara"
+          className="pixel-art"
+        />
+      </div>
     </section>
   );
 }
