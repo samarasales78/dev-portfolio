@@ -3,8 +3,9 @@ import "./tech.css";
 export default function Tech() {
   return (
     <section id="tech" className="tech-section">
-      <h2 className="tech-title">Tecnologias</h2>
-
+      <h2 className="tech-title">
+        <span className="purple">Tecnologias</span>
+      </h2>
       <div className="tech-wrapper">
 
         {/* FRONT-END */}
