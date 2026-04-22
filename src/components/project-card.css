@@ -25,3 +25,40 @@
   width: 100%;
   display: block;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
+  color: white;
+  font-weight: 600;
+}
+
+.btn.primary:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #ddd;
+}
+
+.btn.secondary:hover {
+  background: rgba(168, 85, 247, 0.1);
+}
