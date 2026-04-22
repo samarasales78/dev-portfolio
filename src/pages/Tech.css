@@ -2,12 +2,13 @@
   min-height: 85vh;
   background: #000;
   color: white;
-  display: flex;
-  align-items: center;
+  display: block;
   padding: 80px 60px;
 
   position: relative;
   margin-top: 100px;
+  margin-bottom: 120px;
+  justify-content: center;
   z-index: 2;
 }
 
