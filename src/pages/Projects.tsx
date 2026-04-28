@@ -11,8 +11,8 @@ export function Projects() {
       <div className="projects-container">
         <ProjectCard
           image="/goldengallery.png"
-          title="Galeria de Arte Digital"
-          description="Portfólio pessoal apresentando perfil profissional, projetos, habilidades técnicas e contato."
+          title="Visual Diary"
+          description="Galeria digital de desenhos com sistema de filtros por estilo e ano."
           technologies={["TypeScript", "JavaScript", "CSS", "HTML"]}
           projectUrl="https://samarasales78.github.io/golden-galleryTS/"
           codeUrl="https://github.com/samarasales78/golden-galleryTS"

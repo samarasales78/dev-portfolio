@@ -62,3 +62,14 @@
 .btn.secondary:hover {
   background: rgba(168, 85, 247, 0.1);
 }
+
+.techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 25px 0;
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255,255,255,0.08); /* 👈 divisor */
+}
