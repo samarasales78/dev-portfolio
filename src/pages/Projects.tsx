@@ -17,6 +17,15 @@ export function Projects() {
           projectUrl="https://samarasales78.github.io/golden-galleryTS/"
           codeUrl="https://github.com/samarasales78/golden-galleryTS"
         />
+
+<ProjectCard
+          image="/goldengallery.png"
+          title="The Wizard's Delights"
+          description="Website fictício de restaurante e floricultura com estética inspirada no universo de Harry Potter."
+          technologies={["TypeScript", "JavaScript", "CSS", "HTML"]}
+          projectUrl="https://samarasales78.github.io/restaurant-page/"
+          codeUrl="https://github.com/samarasales78/restaurant-page"
+        />
       </div>
     </section>
   )
