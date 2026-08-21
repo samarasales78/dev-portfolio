@@ -21,3 +21,42 @@
   gap: 20px;
 }
 
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* bolinhas */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #a855f7;
+  transform: scale(1.3);
+}
