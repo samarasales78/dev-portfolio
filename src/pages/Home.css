@@ -1,116 +1,130 @@
+.home {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 80px;
+
+  padding: 150px 10% 70px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   DEGRADÊ ROXO
+========================= */
+
 .purple {
-  background: linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #7c3aed,
+    #5d00ba
+  );
+
   background-clip: text;
   -webkit-background-clip: text;
+
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
 
-.home {
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding: 0 40px;
-  flex-wrap: wrap;
-  padding-top: 100px;
-}
+/* =========================
+   HERO ESQUERDO
+========================= */
 
 .hero-left {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  align-items: flex-start;
+
+  max-width: 700px;
+
   z-index: 2;
-  margin-left: 150px;
-  max-width: 600px;
 }
 
+/* =========================
+   OLÁ, MEU NOME É
+========================= */
+
 .line {
-  font-size: 32px;
-  color: white;
-  opacity: 0;
   margin: 0;
+
+  font-size: 18px;
+  font-weight: 400;
+
+  color: white;
 }
 
 .line-top {
-  transform: translateY(-40px);
-  animation: slideDown 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeUp 0.7s ease forwards;
 }
 
+/* =========================
+   NOME
+========================= */
+
+.name {
+  display: flex;
+  flex-direction: column;
+
+  margin: 8px 0;
+
+  font-size: clamp(58px, 6vw, 86px);
+  line-height: 0.95;
+
+  font-weight: 700;
+  letter-spacing: -3px;
+
+  color: white;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.15s;
+}
+
+/* =========================
+   FRASE
+========================= */
+
 .line-bottom {
-  transform: translateY(40px);
-  animation: slideUp 0.8s ease forwards;
+  margin-top: 14px;
+
+  color: white;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: fadeUp 0.7s ease forwards;
   animation-delay: 0.3s;
 }
 
-.name {
-  font-size: 80px;
-  font-weight: bold;
-  opacity: 0;
-  transform: translateX(-150px);
-  animation: slideRight 0.8s ease forwards;
-  animation-delay: 0.8s;
-  margin: 0;
-  color: white;
-}
-
-@keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateX(-100px);
-  animation: slideRight 0.8s ease forwards;
-  animation-delay: 1.2s;
-}
-
-.icons img {
-  width: 40px;
-  filter: invert(42%) sepia(78%) saturate(600%) hue-rotate(240deg) brightness(100%) contrast(100%);
-  transition: 0.3s;
-}
-
-.icons img:hover {
-  transform: scale(1.2);
-}
+/* =========================
+   MÁQUINA DE ESCREVER
+========================= */
 
 .typing {
   display: inline-block;
+
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid #a855f7;
-  width: 0;
-  animation: typingLoop 10s steps(40, end) infinite,
-             blink 0.9s step-end infinite;
-  animation-delay: 1s;
-}
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  border-right: 3px solid #a855f7;
+
+  width: 0;
+
+  animation:
+    typingLoop 7s steps(42, end) infinite,
+    blink 0.8s step-end infinite;
+
+  animation-delay: 1s;
 }
 
 @keyframes typingLoop {
@@ -118,11 +132,11 @@
     width: 0;
   }
 
-  40% {
+  45% {
     width: 100%;
   }
 
-  60% {
+  65% {
     width: 100%;
   }
 
@@ -131,101 +145,353 @@
   }
 }
 
-.btn-cv {
-  margin-top: 25px;
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 1000px;
-  background: black;
-  border: 2px solid transparent;
-  background-image: linear-gradient(black, black),
-                    linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  transition: 0.3s;
-  width: fit-content;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.8s ease forwards;
-  animation-delay: 1.6s;
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
-.btn-cv:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
+/* =========================
+   BOTÕES
+========================= */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 28px;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.45s;
 }
+
+/* Ver Projetos */
+
+.btn-projects {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 22px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #7c3aed,
+    #5d00ba
+  );
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-projects span {
+  font-size: 18px;
+
+  transition: transform 0.25s ease;
+}
+
+.btn-projects:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-projects:hover span {
+  transform: translateX(4px);
+}
+
+/* Entrar em Contato */
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 22px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(#000, #000) padding-box,
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #7c3aed,
+      #5d00ba
+    ) border-box;
+
+  border: 1px solid transparent;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn-contact span {
+  font-size: 16px;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      rgba(124, 58, 237, 0.12),
+      rgba(124, 58, 237, 0.12)
+    ) padding-box,
+    linear-gradient(
+      90deg,
+      #a855f7,
+      #7c3aed,
+      #5d00ba
+    ) border-box;
+}
+
+/* =========================
+   ÍCONES SOCIAIS
+========================= */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 24px;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: fadeUp 0.7s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #7c3aed;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 5px 15px rgba(124, 58, 237, 0.35);
+}
+
+.social-icons img {
+  width: 21px;
+  height: 21px;
+
+  object-fit: contain;
+}
+
+/* =========================
+   PIXEL ART
+========================= */
 
 .hero-right {
   flex: 1;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   opacity: 0;
-  transform: translateX(100px);
-  animation: slidePixel 1s ease forwards;
-  animation-delay: 1.4s;
+
+  transform: translateX(30px);
+
+  animation: fadePixel 0.8s ease forwards;
+  animation-delay: 0.35s;
 }
 
 .pixel-art {
-  width: 320px;
-  max-width: 100%;
-  height: auto;
-  image-rendering: pixelated;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  width: min(360px, 90%);
 
-  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.35));
+  height: auto;
+
+  image-rendering: pixelated;
+
+  filter: drop-shadow(
+    0 0 18px rgba(168, 85, 247, 0.25)
+  );
+
+  transition: transform 0.3s ease;
 }
 
 .pixel-art:hover {
-  transform: scale(1.08) translateY(-6px);
-  filter: drop-shadow(0 0 22px rgba(168, 85, 247, 0.6));
+  transform: translateY(-6px);
 }
 
-@keyframes slidePixel {
+@keyframes fadePixel {
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/* adaptação */
-@media (max-width: 768px) {
-  .home {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
+/* =========================
+   ANIMAÇÃO GERAL
+========================= */
 
-  .hero-left {
-    align-items: center;
-    margin-left: 0;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+  .home {
+    gap: 40px;
+
+    padding: 120px 7% 70px;
   }
 
   .name {
-    font-size: 56px;
+    font-size: 64px;
   }
 
   .line {
     font-size: 24px;
   }
 
-  .hero-right {
-    margin-top: 30px;
+  .pixel-art {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    min-height: auto;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 50px;
+
+    padding: 80px 25px;
   }
 
-  .pixel-art {
-    width: 220px;
+  .hero-left {
+    align-items: center;
+
+    max-width: 100%;
+  }
+
+  .line {
+    font-size: 22px;
+  }
+
+  .name {
+    font-size: 56px;
+
+    letter-spacing: -2px;
+  }
+
+  .line-bottom {
+    line-height: 1.5;
   }
 
   .typing {
-    white-space: normal;
-    border-right: none;
-    width: auto;
-    animation: none;
+    white-space: nowrap;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  .pixel-art {
+    width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 60px 20px;
+  }
+
+  .line {
+    font-size: 19px;
+  }
+
+  .name {
+    font-size: 45px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn-projects,
+  .btn-contact {
+    padding: 10px 17px;
+
+    font-size: 14px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pixel-art {
+    width: 210px;
   }
 }

@@ -1,42 +1,73 @@
-import './Home.css'
+import './Home.css';
 
 export function Home() {
   return (
     <section id="home" className="home">
       <div className="hero-left">
+
         <p className="line line-top">
-          Olá, meu nome é
+          <span className="purple">• OLÁ, MEU NOME É</span>
         </p>
 
         <h1 className="name">
-          Samara <span className="purple">Sales</span>
+          <span>Samara</span>
+          <span className="purple">Sales</span>
         </h1>
 
         <p className="line line-bottom">
           <span className="typing">
-            E sou uma <span className="purple">desenvolvedora de software</span>
+            <span className="purple">Desenvolvedora</span> de Software
           </span>
         </p>
 
-        <div className="icons">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+        <div className="hero-buttons">
+          <a href="#projects" className="btn-projects">
+            Ver Projetos <span>→</span>
+          </a>
+
+          <a href="#contact" className="btn-contact">
+            Entrar em Contato <span>✉</span>
+          </a>
+        </div>
+
+        <div className="social-icons">
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <img
-              src="https://img.icons8.com/?size=100&id=12598&format=png&color=000000"
+              src="https://img.icons8.com/?size=100&id=12598&format=png&color=ffffff"
               alt="GitHub"
             />
           </a>
 
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <img
-              src="https://img.icons8.com/?size=100&id=447&format=png&color=000000"
+              src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff"
               alt="LinkedIn"
             />
           </a>
+
+          <a
+            href="mailto:"
+            aria-label="E-mail"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=85500&format=png&color=ffffff"
+              alt="Gmail"
+            />
+          </a>
+
         </div>
 
-        <a href="/cv.pdf" download className="btn-cv">
-          Baixar CV
-        </a>
       </div>
 
       <div className="hero-right">
