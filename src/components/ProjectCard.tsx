@@ -1,12 +1,28 @@
-import { techIcons } from "../data/techIcons"
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaJava,
+} from "react-icons/fa";
 
-type ProjectCardProps = {
-  image: string
-  title: string
-  description: string
-  technologies: string[]
-  projectUrl: string
-  codeUrl: string
+import {
+  SiTypescript,
+  SiJavascript,
+  SiVite,
+  SiFlutter,
+  SiDart,
+  SiPython,
+} from "react-icons/si";
+
+interface ProjectCardProps {
+  image: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  projectUrl: string;
+  codeUrl: string;
 }
 
 export function ProjectCard({
@@ -15,46 +31,88 @@ export function ProjectCard({
   description,
   technologies,
   projectUrl,
-  codeUrl
+  codeUrl,
 }: ProjectCardProps) {
-  return (
-    <div className="project-card">
+  const technologyIcon = (technology: string) => {
+    switch (technology) {
+      case "TypeScript":
+        return <SiTypescript />;
+      case "JavaScript":
+        return <SiJavascript />;
+      case "HTML":
+        return <FaHtml5 />;
+      case "CSS":
+        return <FaCss3Alt />;
+      case "React":
+        return <FaReact />;
+      case "Java":
+        return <FaJava />;
+      case "Python":
+        return <SiPython />;
+      case "Vite":
+        return <SiVite />;
+      case "Flutter":
+        return <SiFlutter />;
+      case "Dart":
+        return <SiDart />;
+      default:
+        return null;
+    }
+  };
 
-      {/* imagem */}
-      <div className="image-wrapper">
-        <img src={image} alt={title} />
+  return (
+    <article className="project-card">
+      <div className="project-image-area">
+        <img
+          src={image}
+          alt={`Preview do projeto ${title}`}
+          className="project-image"
+        />
       </div>
 
-      <div className="content">
-        <h3 className="title purple">{title}</h3>
+      <div className="project-info">
+        <span className="project-type">PROJETO</span>
 
-        <p className="description">{description}</p>
+        <h3>{title}</h3>
 
-        <div className="divider" />
+        <p>{description}</p>
 
-        <div className="techs">
-          {technologies.map((tech, index) => (
-            <span key={index} className="tech-item">
-              <img src={techIcons[tech]} alt={tech} />
-              {tech}
+        <div className="project-technologies">
+          {technologies.map((technology) => (
+            <span
+              className="project-technology"
+              key={technology}
+            >
+              {technologyIcon(technology)}
+              {technology}
             </span>
           ))}
         </div>
 
-        <div className="buttons">
-          <a href={projectUrl} target="_blank">
-            <button className="btn primary">
-              Ver Projeto ↗
-            </button>
+        <div className="project-divider"></div>
+
+        <div className="project-actions">
+          <a
+            href={projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link project-link-main"
+          >
+            <FaExternalLinkAlt />
+            Ver Projeto
           </a>
 
-          <a href={codeUrl} target="_blank">
-            <button className="btn secondary">
-              Código
-            </button>
+          <a
+            href={codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link project-link-code"
+          >
+            <FaGithub />
+            Ver Código
           </a>
         </div>
       </div>
-    </div>
-  )
+    </article>
+  );
 }

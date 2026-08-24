@@ -2,14 +2,13 @@
   min-height: 100vh;
   background: #000;
   color: white;
-  padding: 42px 6% 55px;
+  padding: 36px 5% 42px;
   box-sizing: border-box;
-  scroll-margin-top: 48px;
 }
 
 .tech-container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -18,23 +17,23 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 
 .tech-heading-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   color: #a855f7;
 }
 
 .tech-heading-decoration span {
   display: block;
-  width: 130px;
-  height: 2px;
+  width: 100px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, #7c3aed);
 }
 
@@ -43,19 +42,19 @@
 }
 
 .tech-heading-decoration svg {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
   filter: drop-shadow(0 0 7px rgba(168, 85, 247, 0.7));
 }
 
 .tech-heading h2 {
   margin: 0;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 4.5vw, 60px);
+  font-size: 2.5rem;
   line-height: 1.05;
   font-weight: 600;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   background: linear-gradient(
     90deg,
     #ffffff 15%,
@@ -69,10 +68,10 @@
 }
 
 .tech-heading p {
-  max-width: 650px;
-  margin: 9px 0 0;
+  max-width: 580px;
+  margin: 7px 0 0;
   color: #b8b2cc;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.4;
 }
 
@@ -82,7 +81,7 @@
   justify-content: center;
   width: fit-content;
   max-width: 100%;
-  margin: 0 auto 20px;
+  margin: 0 auto 17px;
   padding: 3px;
   border: 1px solid rgba(168, 85, 247, 0.2);
   border-radius: 50px;
@@ -98,15 +97,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-width: 135px;
-  padding: 8px 14px;
+  gap: 6px;
+  min-width: 120px;
+  padding: 7px 12px;
   border: none;
   border-radius: 40px;
   background: transparent;
   color: #aaa3bd;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   transition:
     color 0.25s ease,
@@ -133,16 +132,16 @@
 .category-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .category-card {
   position: relative;
-  min-height: 205px;
-  padding: 19px 21px;
+  min-height: 180px;
+  padding: 16px 18px;
   box-sizing: border-box;
   border: 1px solid rgba(168, 85, 247, 0.7);
-  border-radius: 18px;
+  border-radius: 15px;
   background:
     radial-gradient(
       circle at 10% 0%,
@@ -179,19 +178,19 @@
 .category-card-header {
   position: relative;
   display: grid;
-  grid-template-columns: 50px 1fr auto;
+  grid-template-columns: 44px 1fr auto;
   align-items: center;
-  gap: 13px;
+  gap: 11px;
   z-index: 1;
 }
 
 .category-icon {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
+  border-radius: 12px;
   color: #b56cff;
   background: linear-gradient(
     145deg,
@@ -203,29 +202,29 @@
 }
 
 .category-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
 }
 
 .category-card-content h3 {
   margin: 0 0 3px;
   font-family: Georgia, "Times New Roman", serif;
   color: white;
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 600;
 }
 
 .category-card-content p {
   margin: 0;
-  max-width: 390px;
+  max-width: 350px;
   color: #aaa3bd;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.35;
 }
 
 .category-arrow-button {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -244,8 +243,8 @@
 }
 
 .category-arrow {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transition: transform 0.25s ease;
 }
 
@@ -267,8 +266,8 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
-  margin-top: 14px;
+  gap: 5px;
+  margin-top: 11px;
   z-index: 1;
 }
 
@@ -278,18 +277,18 @@
   justify-content: center;
   gap: 5px;
   min-width: 0;
-  height: 34px;
+  height: 30px;
   padding: 4px 5px;
   box-sizing: border-box;
   border: 1px solid rgba(168, 85, 247, 0.22);
-  border-radius: 9px;
+  border-radius: 8px;
   background: linear-gradient(
     145deg,
     rgba(30, 20, 45, 0.8),
     rgba(12, 10, 18, 0.9)
   );
   color: #eee;
-  font-size: 10px;
+  font-size: 9px;
   white-space: nowrap;
   transition:
     border-color 0.25s ease,
@@ -308,8 +307,8 @@
 }
 
 .technology-badge-icon {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -317,16 +316,16 @@
 }
 
 .technology-badge-icon img {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
 }
 
 .category-details {
   position: relative;
-  padding: 32px;
+  padding: 25px;
   border: 1px solid rgba(168, 85, 247, 0.8);
-  border-radius: 20px;
+  border-radius: 17px;
   background:
     radial-gradient(
       circle at 0% 0%,
@@ -353,19 +352,19 @@
 .details-header {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding-bottom: 22px;
+  gap: 14px;
+  padding-bottom: 17px;
   border-bottom: 1px solid rgba(168, 85, 247, 0.15);
 }
 
 .details-icon {
-  width: 70px;
-  height: 70px;
+  width: 58px;
+  height: 58px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
+  border-radius: 15px;
   color: #b56cff;
   background: linear-gradient(
     145deg,
@@ -377,52 +376,52 @@
 }
 
 .details-header h3 {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   color: white;
 }
 
 .details-header p {
   margin: 0;
-  max-width: 700px;
+  max-width: 650px;
   color: #aaa3bd;
-  font-size: 14px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .details-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding-top: 24px;
+  gap: 30px;
+  padding-top: 19px;
 }
 
 .details-column h4 {
-  margin: 0 0 14px;
+  margin: 0 0 11px;
   color: white;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
 }
 
 .details-list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 7px;
 }
 
 .detail-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   color: #b8b2cc;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .check-icon {
-  width: 21px;
-  height: 21px;
+  width: 19px;
+  height: 19px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
