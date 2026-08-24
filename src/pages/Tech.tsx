@@ -195,6 +195,7 @@ function TechnologyBadge({
       <div className="technology-badge-icon">
         <img src={technology.icon} alt={technology.name} />
       </div>
+
       <span>{technology.name}</span>
     </div>
   );
@@ -202,8 +203,10 @@ function TechnologyBadge({
 
 function CategoryCard({
   data,
+  onClick,
 }: {
   data: CategoryData;
+  onClick: () => void;
 }) {
   const Icon = data.icon;
 
@@ -219,7 +222,17 @@ function CategoryCard({
           <p>{data.description}</p>
         </div>
 
-        <ArrowRight className="category-arrow" size={22} />
+        <button
+          type="button"
+          className="category-arrow-button"
+          onClick={onClick}
+          aria-label={`Ver ${data.title}`}
+        >
+          <ArrowRight
+            className="category-arrow"
+            size={18}
+          />
+        </button>
       </div>
 
       <div className="technology-list">
@@ -342,12 +355,33 @@ export default function Tech() {
 
         {activeCategory === "Todas" ? (
           <div className="category-grid">
-            <CategoryCard data={technologies.Frontend!} />
-            <CategoryCard data={technologies.Backend!} />
+            <CategoryCard
+              data={technologies.Frontend!}
+              onClick={() =>
+                handleCategoryChange("Frontend")
+              }
+            />
+
+            <CategoryCard
+              data={technologies.Backend!}
+              onClick={() =>
+                handleCategoryChange("Backend")
+              }
+            />
+
             <CategoryCard
               data={technologies["Banco de Dados"]!}
+              onClick={() =>
+                handleCategoryChange("Banco de Dados")
+              }
             />
-            <CategoryCard data={technologies.Ferramentas!} />
+
+            <CategoryCard
+              data={technologies.Ferramentas!}
+              onClick={() =>
+                handleCategoryChange("Ferramentas")
+              }
+            />
           </div>
         ) : (
           <CategoryDetails
