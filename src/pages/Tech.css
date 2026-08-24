@@ -1,101 +1,50 @@
-.tech {
-  min-height: 85vh;
+.tech-section {
+  min-height: 100vh;
   background: #000;
   color: white;
-  display: block;
-  padding: 80px 60px;
-
-  position: relative;
-  margin-top: 100px;
-  margin-bottom: 120px;
-  justify-content: center;
-  z-index: 2;
+  padding: 42px 6% 55px;
+  box-sizing: border-box;
 }
 
 .tech-container {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1180px;
   margin: 0 auto;
-  display: flex;
-  justify-content: flex-start;
 }
 
-.tech-left {
-  max-width: 750px;
-
-  opacity: 0;
-  transform: translateX(-80px);
-  animation: slideAbout 0.8s ease forwards;
-}
-
-.tech-title {
-  font-size: 42px;
-  line-height: 1.2;
-  margin: 0 0 28px 0;
-  color: white;
-  padding-left: 180px;
-}
-
-.tech-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-
-  max-width: 700px;
-  width: 100%;
-
-  margin: 0 auto; 
-}
-.tech-block {
-  padding: 22px;
-  border-radius: 16px;
-
-  background: rgba(20, 20, 20, 0.6);
-  backdrop-filter: blur(8px);
-
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.tech-box {
-  aspect-ratio: 1 / 1; 
-
-  background: rgba(40, 40, 40, 0.6);
-  border-radius: 12px;
-
+.tech-heading {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-
-  transition: 0.2s;
-}
-
-.tech-box img {
-  width: 32px;
-  height: 32px;
-}
-
-.tech-box span {
-  font-size: 0.75rem;
-  color: #bbb;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.tech-box:hover {
-  background: linear-gradient(135deg, #c084fc, #9333ea);
-  transform: scale(1.05);
+.tech-heading-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 7px;
+  color: #a855f7;
 }
 
-.tech-box:hover span {
-  color: white;
+.tech-heading-decoration span {
+  display: block;
+  width: 130px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #7c3aed
+  );
+}
+
+.tech-heading-decoration span:last-child {
+  background: linear-gradient(
+    90deg,
+    #7c3aed,
+    transparent
+  );
 }
