@@ -24,36 +24,33 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100%;
-  margin-bottom: 5px;
-  color: #a855f7;
+  margin-bottom: 6px;
 }
 
 .about-heading-decoration span {
-  display: block;
-  width: 100px;
+  width: 65px;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    #7c3aed
+    #a855f7
   );
 }
 
 .about-heading-decoration span:last-child {
   background: linear-gradient(
     90deg,
-    #7c3aed,
+    #a855f7,
     transparent
   );
 }
 
-.about-heading-decoration svg {
-  width: 21px;
-  height: 21px;
-  filter: drop-shadow(
-    0 0 7px rgba(168, 85, 247, 0.7)
-  );
+.about-heading-decoration strong {
+  color: #a855f7;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1;
 }
 
 .about-heading h2 {
@@ -64,14 +61,12 @@
   line-height: 1.05;
   font-weight: 600;
   letter-spacing: -1.5px;
-
   background: linear-gradient(
     90deg,
     #ffffff 15%,
     #e9d5ff 55%,
     #a855f7 100%
   );
-
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -96,10 +91,8 @@
   max-width: 850px;
   padding: 25px;
   box-sizing: border-box;
-
   border: 1px solid rgba(168, 85, 247, 0.7);
   border-radius: 17px;
-
   background:
     radial-gradient(
       circle at 0% 0%,
@@ -111,10 +104,8 @@
       #09070d,
       #050507
     );
-
   box-shadow:
     0 0 28px rgba(124, 58, 237, 0.08);
-
   opacity: 0;
   transform: translateY(10px);
   animation: aboutAppear 0.5s ease forwards;
@@ -144,7 +135,6 @@
     #5d00ba,
     #46006f
   );
-
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -216,9 +206,8 @@
     width: 65px;
   }
 
-  .about-heading-decoration svg {
-    width: 27px;
-    height: 27px;
+  .about-heading-decoration strong {
+    font-size: 0.85rem;
   }
 
   .about-heading h2 {
@@ -265,9 +254,8 @@
     width: 45px;
   }
 
-  .about-heading-decoration svg {
-    width: 27px;
-    height: 27px;
+  .about-heading-decoration strong {
+    font-size: 0.8rem;
   }
 
   .about-heading h2 {
@@ -324,9 +312,8 @@
     width: 35px;
   }
 
-  .about-heading-decoration svg {
-    width: 27px;
-    height: 27px;
+  .about-heading-decoration strong {
+    font-size: 0.75rem;
   }
 
   .about-left {

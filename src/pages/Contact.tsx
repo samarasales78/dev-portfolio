@@ -9,8 +9,9 @@ import {
   FaUser,
   FaTag,
   FaPen,
-  FaCode,
 } from "react-icons/fa6";
+
+import { Code2 } from "lucide-react";
 
 import "./contact.css";
 
@@ -18,12 +19,13 @@ export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
-
         {/* TÍTULO */}
         <div className="contact-heading">
           <div className="contact-heading-decoration">
             <span></span>
-            <FaCode />
+
+            <Code2 size={21} />
+
             <span></span>
           </div>
 
@@ -39,7 +41,6 @@ export default function Contact() {
 
         {/* CONTEÚDO */}
         <div className="contact-content">
-
           {/* INFORMAÇÕES */}
           <aside className="contact-info">
             <div className="contact-intro">
@@ -55,7 +56,6 @@ export default function Contact() {
             <div className="contact-line"></div>
 
             <div className="contact-details">
-
               {/* E-MAIL */}
               <div className="contact-detail">
                 <div className="contact-detail-icon">
@@ -79,6 +79,7 @@ export default function Contact() {
 
                 <div>
                   <h4>Localização</h4>
+
                   <p>Campina Grande, PB - Brasil</p>
                 </div>
               </div>
@@ -91,10 +92,10 @@ export default function Contact() {
 
                 <div>
                   <h4>Disponibilidade</h4>
+
                   <p>Aberta a oportunidades</p>
                 </div>
               </div>
-
             </div>
 
             <div className="contact-line"></div>
@@ -104,7 +105,6 @@ export default function Contact() {
               <h3>Me encontre nas redes</h3>
 
               <div className="contact-social-links">
-
                 {/* GITHUB */}
                 <a
                   href="https://github.com/samarasales78"
@@ -134,14 +134,12 @@ export default function Contact() {
                 >
                   <FaInstagram />
                 </a>
-
               </div>
             </div>
           </aside>
 
           {/* FORMULÁRIO */}
           <div className="contact-form-card">
-
             <div className="contact-form-title">
               <h3>Envie uma mensagem</h3>
 
@@ -155,9 +153,7 @@ export default function Contact() {
               className="contact-form"
               onSubmit={(e) => e.preventDefault()}
             >
-
               <div className="contact-input-row">
-
                 <div className="contact-field">
                   <FaUser />
 
@@ -175,7 +171,6 @@ export default function Contact() {
                     placeholder="Seu e-mail"
                   />
                 </div>
-
               </div>
 
               <div className="contact-field contact-field-full">
@@ -190,9 +185,7 @@ export default function Contact() {
               <div className="contact-field contact-textarea">
                 <FaPen />
 
-                <textarea
-                  placeholder="Sua mensagem"
-                ></textarea>
+                <textarea placeholder="Sua mensagem"></textarea>
               </div>
 
               <div className="contact-button-area">
@@ -201,10 +194,8 @@ export default function Contact() {
                   Enviar mensagem
                 </button>
               </div>
-
             </form>
           </div>
-
         </div>
       </div>
     </section>

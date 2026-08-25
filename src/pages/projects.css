@@ -1,15 +1,23 @@
 .projects {
   min-height: 100vh;
-  padding: 48px 35px 55px;
+  padding: 36px 5% 42px;
   background: #000;
   color: #fff;
-  position: relative;
-  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .projects-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 17px;
 }
 
 .projects-decoration {
@@ -17,109 +25,119 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 6px;
+  width: 100%;
+  margin-bottom: 5px;
+  color: #a855f7;
 }
 
 .projects-decoration span {
-  width: 65px;
+  display: block;
+  width: 100px;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    #a855f7
+    #7c3aed
   );
 }
 
 .projects-decoration span:last-child {
   background: linear-gradient(
     90deg,
-    #a855f7,
+    #7c3aed,
     transparent
   );
 }
 
-.projects-decoration strong {
-  color: #a855f7;
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
+.projects-decoration svg {
+  width: 21px;
+  height: 21px;
 }
 
 .projects-title {
   margin: 0;
+  padding-bottom: 7px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.5rem;
-  line-height: 1.1;
-  color: #f2f2f2;
-}
-
-.projects-title span {
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -1.5px;
   background: linear-gradient(
     90deg,
-    #a855f7,
-    #7c3aed,
-    #d8b4fe
+    #ffffff 15%,
+    #e9d5ff 55%,
+    #a855f7 100%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .projects-subtitle {
-  margin: 9px auto 0;
-  max-width: 600px;
-  color: #b8b4c5;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  max-width: 580px;
+  margin: 7px 0 0;
+  color: #b8b2cc;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .projects-categories {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 25px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 17px;
   display: flex;
   align-items: center;
-  background: rgba(14, 12, 24, 0.9);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  border-radius: 13px;
+  padding: 3px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 50px;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 15, 30, 0.8),
+    rgba(5, 5, 8, 0.9)
+  );
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.04);
   overflow: hidden;
 }
 
 .category {
-  flex: 1;
-  min-height: 42px;
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 95px;
+  padding: 7px 12px;
   border: none;
-  border-right: 1px solid rgba(168, 85, 247, 0.15);
-  color: #bcb7c8;
-  font-size: 0.78rem;
+  border-radius: 40px;
+  background: transparent;
+  color: #aaa3bd;
+  font-family: inherit;
+  font-size: 12px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.category:last-child {
-  border-right: none;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .category:hover {
-  color: #fff;
-  background: rgba(168, 85, 247, 0.08);
+  color: #ffffff;
 }
 
 .category.active {
-  color: #fff;
+  color: white;
   background: linear-gradient(
     135deg,
-    rgba(168, 85, 247, 0.45),
-    rgba(91, 33, 150, 0.25)
+    rgba(168, 85, 247, 0.35),
+    rgba(91, 0, 150, 0.55)
   );
   box-shadow:
-    inset 0 0 18px rgba(168, 85, 247, 0.15),
-    0 0 16px rgba(168, 85, 247, 0.15);
+    inset 0 0 0 1px rgba(168, 85, 247, 0.8),
+    0 0 18px rgba(124, 58, 237, 0.22);
 }
 
 .project-carousel-wrapper {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -193,11 +211,11 @@
 
 @media (max-width: 1000px) {
   .projects {
-    padding: 42px 25px 50px;
+    padding: 32px 4% 36px;
   }
 
   .projects-title {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
 
   .project-arrow {
@@ -206,26 +224,51 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   .projects {
-    padding: 38px 16px 45px;
+    padding: 28px 5% 32px;
+  }
+
+  .projects-header {
+    margin-bottom: 14px;
+  }
+
+  .projects-decoration {
+    gap: 7px;
+  }
+
+  .projects-decoration span {
+    width: 65px;
+  }
+
+  .projects-decoration svg {
+    width: 18px;
+    height: 18px;
   }
 
   .projects-title {
     font-size: 2rem;
+    letter-spacing: -1px;
   }
 
   .projects-subtitle {
-    font-size: 0.8rem;
+    max-width: 450px;
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   .projects-categories {
-    margin-bottom: 20px;
-    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 2px;
+    box-sizing: border-box;
   }
 
   .category {
-    min-width: 95px;
+    flex: 1;
+    min-width: 0;
+    padding: 7px 9px;
+    font-size: 10px;
   }
 
   .project-carousel-wrapper {
@@ -252,16 +295,73 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .projects {
-    padding: 34px 13px 40px;
+    padding: 24px 4% 28px;
   }
 
-  .projects-title {
-    font-size: 1.8rem;
+  .projects-header {
+    margin-bottom: 12px;
+  }
+
+  .projects-decoration {
+    gap: 5px;
+    margin-bottom: 4px;
   }
 
   .projects-decoration span {
-    width: 40px;
+    width: 45px;
+  }
+
+  .projects-decoration svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .projects-title {
+    font-size: 1.75rem;
+    padding-bottom: 4px;
+  }
+
+  .projects-subtitle {
+    max-width: 330px;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .projects-categories {
+    width: 100%;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+
+  .category {
+    min-width: 0;
+    padding: 6px 5px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .projects {
+    padding: 20px 3% 24px;
+  }
+
+  .projects-title {
+    font-size: 1.55rem;
+  }
+
+  .projects-subtitle {
+    font-size: 9px;
+  }
+
+  .projects-decoration span {
+    width: 35px;
+  }
+
+  .category {
+    padding: 5px 3px;
+    font-size: 8px;
   }
 }

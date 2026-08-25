@@ -1,4 +1,3 @@
-import { Code2 } from "lucide-react";
 import "./About.css";
 
 export function About() {
@@ -9,7 +8,7 @@ export function About() {
           <div className="about-heading-decoration">
             <span></span>
 
-            <Code2 size={21} />
+            <strong>{"</>"}</strong>
 
             <span></span>
           </div>
