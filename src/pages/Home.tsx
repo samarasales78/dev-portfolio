@@ -25,8 +25,12 @@ export function Home() {
             Ver Projetos <span>→</span>
           </a>
 
-          <a href="#contact" className="btn-contact">
-            Entrar em Contato <span>✉</span>
+          <a href="#contact" className="btn-contact desktop-contact">
+            Entrar em Contato
+          </a>
+
+          <a href="/curriculo.pdf" className="btn-contact mobile-cv" download>
+            Baixar CV
           </a>
         </div>
 
@@ -53,16 +57,6 @@ export function Home() {
             <img
               src="https://img.icons8.com/?size=100&id=447&format=png&color=ffffff"
               alt="LinkedIn"
-            />
-          </a>
-
-          <a
-            href="mailto:"
-            aria-label="E-mail"
-          >
-            <img
-              src="https://img.icons8.com/?size=100&id=85500&format=png&color=ffffff"
-              alt="Gmail"
             />
           </a>
 

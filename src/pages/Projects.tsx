@@ -13,17 +13,28 @@ export function Projects() {
       description:
         "Galeria digital de desenhos com sistema de filtros por estilo e ano.",
       technologies: ["TypeScript", "JavaScript", "CSS", "HTML"],
-      projectUrl: "https://samarasales78.github.io/golden-galleryTS/",
-      codeUrl: "https://github.com/samarasales78/golden-galleryTS",
+      projectUrl:
+        "https://samarasales78.github.io/golden-galleryTS/",
+      codeUrl:
+        "https://github.com/samarasales78/golden-galleryTS",
     },
     {
-      image: "/wizard-delights.png",
-      title: "The Wizard's Delights",
+      image: "/data-structures-library.png",
+      title: "Data Structures Library",
       description:
-        "Website fictício de restaurante e floricultura com uma estética mágica e imersiva.",
-      technologies: ["JavaScript", "CSS", "HTML"],
-      projectUrl: "https://samarasales78.github.io/restaurant-page/",
-      codeUrl: "https://github.com/samarasales78/restaurant-page",
+        "Biblioteca de estruturas de dados desenvolvida em Java para estudos e prática de algoritmos.",
+      technologies: ["Java"],
+      codeUrl:
+        "https://github.com/samarasales78/data-structures-library",
+    },
+    {
+      image: "/bibliotech.png",
+      title: "BiblioTech",
+      description:
+        "Sistema de biblioteca desenvolvido para gerenciamento e organização de livros.",
+      technologies: ["Java"],
+      codeUrl:
+        "https://github.com/samarasales78/bibliotech",
     },
   ];
 
@@ -57,8 +68,7 @@ export function Projects() {
         </h2>
 
         <p className="projects-subtitle">
-          Alguns dos projetos que desenvolvi para transformar ideias em
-          soluções reais.
+          Alguns dos projetos que desenvolvi.
         </p>
       </div>
 
@@ -87,8 +97,18 @@ export function Projects() {
             }}
           >
             {projects.map((project) => (
-              <div className="project-slide" key={project.title}>
-                <ProjectCard {...project} />
+              <div
+                className="project-slide"
+                key={project.title}
+              >
+                <ProjectCard
+                  image={project.image}
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  projectUrl={project.projectUrl}
+                  codeUrl={project.codeUrl}
+                />
               </div>
             ))}
           </div>

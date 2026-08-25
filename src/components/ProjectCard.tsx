@@ -21,7 +21,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  projectUrl: string;
+  projectUrl?: string;
   codeUrl: string;
 }
 
@@ -37,24 +37,34 @@ export function ProjectCard({
     switch (technology) {
       case "TypeScript":
         return <SiTypescript />;
+
       case "JavaScript":
         return <SiJavascript />;
+
       case "HTML":
         return <FaHtml5 />;
+
       case "CSS":
         return <FaCss3Alt />;
+
       case "React":
         return <FaReact />;
+
       case "Java":
         return <FaJava />;
+
       case "Python":
         return <SiPython />;
+
       case "Vite":
         return <SiVite />;
+
       case "Flutter":
         return <SiFlutter />;
+
       case "Dart":
         return <SiDart />;
+
       default:
         return null;
     }
@@ -89,24 +99,30 @@ export function ProjectCard({
           ))}
         </div>
 
-        <div className="project-divider"></div>
+        <div className="project-divider" />
 
         <div className="project-actions">
-          <a
-            href={projectUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link project-link-main"
-          >
-            <FaExternalLinkAlt />
-            Ver Projeto
-          </a>
+          {projectUrl && (
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link project-link-main"
+            >
+              <FaExternalLinkAlt />
+              Ver Projeto
+            </a>
+          )}
 
           <a
             href={codeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="project-link project-link-code"
+            className={
+              projectUrl
+                ? "project-link project-link-code"
+                : "project-link project-link-code project-link-full"
+            }
           >
             <FaGithub />
             Ver Código
