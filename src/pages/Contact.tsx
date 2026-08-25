@@ -10,22 +10,17 @@ import {
   FaTag,
   FaPen,
 } from "react-icons/fa6";
-
 import { Code2 } from "lucide-react";
-
 import "./contact.css";
 
 export default function Contact() {
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
-        {/* TÍTULO */}
         <div className="contact-heading">
           <div className="contact-heading-decoration">
             <span></span>
-
             <Code2 size={21} />
-
             <span></span>
           </div>
 
@@ -39,9 +34,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* CONTEÚDO */}
         <div className="contact-content">
-          {/* INFORMAÇÕES */}
           <aside className="contact-info">
             <div className="contact-intro">
               <h3>Entre em contato</h3>
@@ -56,7 +49,6 @@ export default function Contact() {
             <div className="contact-line"></div>
 
             <div className="contact-details">
-              {/* E-MAIL */}
               <div className="contact-detail">
                 <div className="contact-detail-icon">
                   <FaEnvelope />
@@ -71,7 +63,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* LOCALIZAÇÃO */}
               <div className="contact-detail">
                 <div className="contact-detail-icon">
                   <FaLocationDot />
@@ -79,12 +70,10 @@ export default function Contact() {
 
                 <div>
                   <h4>Localização</h4>
-
                   <p>Campina Grande, PB - Brasil</p>
                 </div>
               </div>
 
-              {/* DISPONIBILIDADE */}
               <div className="contact-detail">
                 <div className="contact-detail-icon">
                   <FaClock />
@@ -92,7 +81,6 @@ export default function Contact() {
 
                 <div>
                   <h4>Disponibilidade</h4>
-
                   <p>Aberta a oportunidades</p>
                 </div>
               </div>
@@ -100,12 +88,10 @@ export default function Contact() {
 
             <div className="contact-line"></div>
 
-            {/* REDES SOCIAIS */}
             <div className="contact-social">
               <h3>Me encontre nas redes</h3>
 
               <div className="contact-social-links">
-                {/* GITHUB */}
                 <a
                   href="https://github.com/samarasales78"
                   target="_blank"
@@ -115,9 +101,8 @@ export default function Contact() {
                   <FaGithub />
                 </a>
 
-                {/* LINKEDIN */}
                 <a
-                  href="https://www.linkedin.com/in/samara-matias-sales-573b43390?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  href="https://www.linkedin.com/in/samara-matias-sales-573b43390"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -125,7 +110,6 @@ export default function Contact() {
                   <FaLinkedinIn />
                 </a>
 
-                {/* INSTAGRAM */}
                 <a
                   href="https://www.instagram.com/samarasales78"
                   target="_blank"
@@ -138,7 +122,6 @@ export default function Contact() {
             </div>
           </aside>
 
-          {/* FORMULÁRIO */}
           <div className="contact-form-card">
             <div className="contact-form-title">
               <h3>Envie uma mensagem</h3>

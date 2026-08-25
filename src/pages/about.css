@@ -1,7 +1,8 @@
 .about-section {
+  min-height: 100vh;
   background: #000;
   color: white;
-  padding: 36px 5% 42px;
+  padding: 36px 5% 90px;
   box-sizing: border-box;
 }
 
@@ -16,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 42px;
 }
 
 .about-heading-decoration {
@@ -24,33 +25,36 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 6px;
+  width: 100%;
+  margin-bottom: 5px;
+  color: #a855f7;
 }
 
 .about-heading-decoration span {
-  width: 65px;
+  display: block;
+  width: 100px;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    #a855f7
+    #7c3aed
   );
 }
 
 .about-heading-decoration span:last-child {
   background: linear-gradient(
     90deg,
-    #a855f7,
+    #7c3aed,
     transparent
   );
 }
 
-.about-heading-decoration strong {
-  color: #a855f7;
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  line-height: 1;
+.about-heading-decoration svg {
+  width: 21px;
+  height: 21px;
+  filter: drop-shadow(
+    0 0 7px rgba(168, 85, 247, 0.7)
+  );
 }
 
 .about-heading h2 {
@@ -88,8 +92,8 @@
 
 .about-left {
   width: 100%;
-  max-width: 850px;
-  padding: 25px;
+  max-width: 900px;
+  padding: 30px;
   box-sizing: border-box;
   border: 1px solid rgba(168, 85, 247, 0.7);
   border-radius: 17px;
@@ -112,7 +116,7 @@
 }
 
 .about-tag {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: #a855f7;
   font-size: 12px;
   font-weight: 700;
@@ -120,10 +124,10 @@
 }
 
 .about-title {
-  margin: 0 0 22px;
+  margin: 0 0 25px;
   color: white;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -144,14 +148,14 @@
 .about-texts {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .about-text {
   margin: 0;
   color: #aaa3bd;
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 @keyframes aboutAppear {
@@ -168,7 +172,11 @@
 
 @media (max-width: 900px) {
   .about-section {
-    padding: 32px 4% 36px;
+    padding: 32px 4% 80px;
+  }
+
+  .about-heading {
+    margin-bottom: 38px;
   }
 
   .about-heading h2 {
@@ -181,21 +189,25 @@
   }
 
   .about-left {
-    padding: 20px;
+    padding: 25px;
   }
 
   .about-title {
-    font-size: 27px;
+    font-size: 29px;
+  }
+
+  .about-text {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 700px) {
   .about-section {
-    padding: 28px 5% 32px;
+    padding: 28px 5% 70px;
   }
 
   .about-heading {
-    margin-bottom: 25px;
+    margin-bottom: 32px;
   }
 
   .about-heading-decoration {
@@ -206,8 +218,9 @@
     width: 65px;
   }
 
-  .about-heading-decoration strong {
-    font-size: 0.85rem;
+  .about-heading-decoration svg {
+    width: 18px;
+    height: 18px;
   }
 
   .about-heading h2 {
@@ -222,27 +235,32 @@
   }
 
   .about-left {
-    padding: 17px;
+    padding: 21px;
     border-radius: 14px;
   }
 
   .about-title {
-    font-size: 23px;
+    font-size: 25px;
+    margin-bottom: 21px;
+  }
+
+  .about-texts {
+    gap: 15px;
   }
 
   .about-text {
-    font-size: 11px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.65;
   }
 }
 
 @media (max-width: 480px) {
   .about-section {
-    padding: 24px 4% 28px;
+    padding: 24px 4% 65px;
   }
 
   .about-heading {
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 
   .about-heading-decoration {
@@ -254,8 +272,9 @@
     width: 45px;
   }
 
-  .about-heading-decoration strong {
-    font-size: 0.8rem;
+  .about-heading-decoration svg {
+    width: 16px;
+    height: 16px;
   }
 
   .about-heading h2 {
@@ -271,33 +290,38 @@
   }
 
   .about-left {
-    padding: 14px;
+    padding: 18px;
     border-radius: 13px;
   }
 
   .about-tag {
     font-size: 10px;
     letter-spacing: 2px;
+    margin-bottom: 10px;
   }
 
   .about-title {
-    font-size: 20px;
-    margin-bottom: 17px;
+    font-size: 22px;
+    margin-bottom: 19px;
   }
 
   .about-texts {
-    gap: 12px;
+    gap: 13px;
   }
 
   .about-text {
-    font-size: 10px;
-    line-height: 1.55;
+    font-size: 11px;
+    line-height: 1.6;
   }
 }
 
 @media (max-width: 380px) {
   .about-section {
-    padding: 20px 3% 24px;
+    padding: 20px 3% 58px;
+  }
+
+  .about-heading {
+    margin-bottom: 25px;
   }
 
   .about-heading h2 {
@@ -312,19 +336,21 @@
     width: 35px;
   }
 
-  .about-heading-decoration strong {
-    font-size: 0.75rem;
+  .about-heading-decoration svg {
+    width: 15px;
+    height: 15px;
   }
 
   .about-left {
-    padding: 11px;
+    padding: 15px;
   }
 
   .about-title {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .about-text {
-    font-size: 8px;
+    font-size: 10px;
+    line-height: 1.55;
   }
 }

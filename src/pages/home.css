@@ -73,13 +73,12 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
+  vertical-align: bottom;
   border-right: 3px solid #a855f7;
   width: 0;
-
   animation:
-    typingLoop 7s steps(42, end) infinite,
+    typingLoop 7s steps(26, end) infinite,
     blink 0.8s step-end infinite;
-
   animation-delay: 1s;
 }
 
@@ -89,11 +88,11 @@
   }
 
   45% {
-    width: 100%;
+    width: 23ch;
   }
 
   65% {
-    width: 100%;
+    width: 23ch;
   }
 
   100% {

@@ -61,7 +61,9 @@ export function Projects() {
         <div className="projects-header">
           <div className="projects-decoration">
             <span></span>
-            <Code2 size={21} />
+
+            <Code2 size={27} />
+
             <span></span>
           </div>
 

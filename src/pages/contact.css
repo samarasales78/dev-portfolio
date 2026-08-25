@@ -1,21 +1,25 @@
 .contact {
   min-height: 100vh;
-  padding: 48px 35px 55px;
+  padding: 36px 5% 90px;
   background: #000;
   color: #fff;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .contact-container {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .contact-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 42px;
 }
 
 .contact-heading-decoration {
@@ -24,13 +28,13 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   color: #a855f7;
 }
 
 .contact-heading-decoration span {
   display: block;
-  width: 65px;
+  width: 100px;
   height: 1px;
   background: linear-gradient(
     90deg,
@@ -58,30 +62,34 @@
 
 .contact-heading h2 {
   margin: 0;
+  padding-bottom: 7px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.5rem;
-  line-height: 1.1;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -1.5px;
   color: #f2f2f2;
 }
 
 .contact-heading h2 span {
   background: linear-gradient(
     90deg,
-    #a855f7,
-    #7c3aed,
-    #d8b4fe
+    #ffffff 15%,
+    #e9d5ff 55%,
+    #a855f7 100%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .contact-heading p {
-  max-width: 600px;
-  margin: 9px auto 0;
-  color: #b8b4c5;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  max-width: 580px;
+  margin: 7px 0 0;
+  color: #b8b2cc;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .contact-content {
@@ -328,13 +336,26 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .contact {
-    padding: 42px 25px 50px;
+    padding: 32px 4% 80px;
+  }
+
+  .contact-heading {
+    margin-bottom: 38px;
   }
 
   .contact-heading h2 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
+  }
+
+  .contact-heading p {
+    max-width: 520px;
+    font-size: 12px;
+  }
+
+  .contact-heading-decoration span {
+    width: 85px;
   }
 
   .contact-content {
@@ -343,21 +364,37 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   .contact {
-    padding: 38px 16px 45px;
+    padding: 28px 5% 70px;
   }
 
   .contact-heading {
-    margin-bottom: 22px;
+    margin-bottom: 32px;
+  }
+
+  .contact-heading-decoration {
+    gap: 7px;
+  }
+
+  .contact-heading-decoration span {
+    width: 65px;
+  }
+
+  .contact-heading-decoration svg {
+    width: 18px;
+    height: 18px;
   }
 
   .contact-heading h2 {
     font-size: 2rem;
+    letter-spacing: -1px;
   }
 
   .contact-heading p {
-    font-size: 0.8rem;
+    max-width: 450px;
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   .contact-content {
@@ -372,19 +409,49 @@
   .contact-form-card {
     padding: 20px;
   }
-}
 
-@media (max-width: 500px) {
-  .contact {
-    padding: 34px 13px 40px;
+  .contact-social {
+    text-align: center;
   }
 
-  .contact-heading h2 {
-    font-size: 1.8rem;
+  .contact-social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 24px 4% 65px;
+  }
+
+  .contact-heading {
+    margin-bottom: 28px;
+  }
+
+  .contact-heading-decoration {
+    gap: 5px;
+    margin-bottom: 4px;
   }
 
   .contact-heading-decoration span {
-    width: 40px;
+    width: 45px;
+  }
+
+  .contact-heading-decoration svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contact-heading h2 {
+    font-size: 1.75rem;
+    padding-bottom: 4px;
+  }
+
+  .contact-heading p {
+    max-width: 330px;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.3;
   }
 
   .contact-input-row {
@@ -397,5 +464,40 @@
 
   .contact-button-area button {
     width: 100%;
+  }
+
+  .contact-social {
+    text-align: center;
+  }
+
+  .contact-social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact {
+    padding: 20px 3% 58px;
+  }
+
+  .contact-heading {
+    margin-bottom: 25px;
+  }
+
+  .contact-heading h2 {
+    font-size: 1.55rem;
+  }
+
+  .contact-heading p {
+    font-size: 9px;
+  }
+
+  .contact-heading-decoration span {
+    width: 35px;
+  }
+
+  .contact-heading-decoration svg {
+    width: 15px;
+    height: 15px;
   }
 }

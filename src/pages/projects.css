@@ -52,6 +52,9 @@
 .projects-decoration svg {
   width: 21px;
   height: 21px;
+  filter: drop-shadow(
+    0 0 7px rgba(168, 85, 247, 0.7)
+  );
 }
 
 .projects-title {
@@ -142,20 +145,25 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  box-sizing: border-box;
 }
 
 .project-carousel {
   width: 100%;
+  min-width: 0;
   overflow: hidden;
 }
 
 .project-track {
   display: flex;
+  width: 100%;
   transition: transform 0.55s ease;
 }
 
 .project-slide {
   min-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .project-arrow {
@@ -272,8 +280,23 @@
   }
 
   .project-carousel-wrapper {
+    width: 100%;
     position: relative;
-    padding-bottom: 50px;
+    display: block;
+    padding: 0 0 50px;
+    box-sizing: border-box;
+  }
+
+  .project-carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .project-slide {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
   }
 
   .project-arrow {
@@ -341,6 +364,18 @@
     padding: 6px 5px;
     font-size: 9px;
   }
+
+  .project-carousel-wrapper {
+    padding-bottom: 48px;
+  }
+
+  .project-arrow-left {
+    left: calc(50% - 45px);
+  }
+
+  .project-arrow-right {
+    right: calc(50% - 45px);
+  }
 }
 
 @media (max-width: 380px) {
@@ -363,5 +398,9 @@
   .category {
     padding: 5px 3px;
     font-size: 8px;
+  }
+
+  .project-carousel-wrapper {
+    padding-bottom: 46px;
   }
 }
