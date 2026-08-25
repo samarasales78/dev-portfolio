@@ -20,6 +20,17 @@ export function Projects() {
         "https://github.com/samarasales78/golden-galleryTS",
     },
     {
+      image: "/dev-portfolio.png",
+      title: "Dev Portfolio",
+      description:
+        "Portfólio pessoal desenvolvido para apresentar projetos, tecnologias e informações profissionais.",
+      technologies: ["React", "TypeScript", "CSS", "HTML"],
+      projectUrl:
+        "https://dev-portfolio-five-ashy.vercel.app/",
+      codeUrl:
+        "https://github.com/samarasales78/dev-portfolio",
+    },
+    {
       image: "/data-structures-library.png",
       title: "Data Structures Library",
       description:

@@ -125,7 +125,7 @@ export function ProjectCard({
             }
           >
             <FaGithub />
-            Ver Código
+            Código
           </a>
         </div>
       </div>

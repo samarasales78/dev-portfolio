@@ -3,7 +3,9 @@ import "./footer.css";
 export default function Footer() {
   return (
     <footer className="site-footer">
-      Desenvolvido por <span>Samara Sales</span> 2026
+      <p>
+        © 2026 <span>Samara Sales</span>. Todos os direitos reservados.
+      </p>
     </footer>
   );
 }

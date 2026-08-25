@@ -23,7 +23,7 @@ export function Header() {
 
       <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
         <a href="#home" className="nav-item" onClick={() => setMenuOpen(false)}>
-          HOME
+          INÍCIO
         </a>
 
         <a href="#about" className="nav-item" onClick={() => setMenuOpen(false)}>
