@@ -1,4 +1,4 @@
-import './Home.css';
+import "./Home.css";
 
 export function Home() {
   return (
@@ -25,7 +25,7 @@ export function Home() {
             Ver Projetos <span>→</span>
           </a>
 
-          <a href="#contact" className="btn-contact desktop-contact">
+          <a href="#contact" className="btn-contact">
             Entrar em Contato
           </a>
 
@@ -35,9 +35,8 @@ export function Home() {
         </div>
 
         <div className="social-icons">
-
           <a
-            href="#"
+            href="https://github.com/samarasales78"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -49,7 +48,7 @@ export function Home() {
           </a>
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/samara-matias-sales-573b43390"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -59,7 +58,6 @@ export function Home() {
               alt="LinkedIn"
             />
           </a>
-
         </div>
 
       </div>
