@@ -1,49 +1,150 @@
-.about {
-  min-height: 85vh;
+.about-section {
   background: #000;
   color: white;
-  display: flex;
-  align-items: center;
-  padding: 80px 60px;
-
-  position: relative;
-  margin-top: -20px;
-  z-index: 2;
+  padding: 36px 5% 42px;
+  box-sizing: border-box;
 }
 
 .about-container {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.about-heading {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.about-heading-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 5px;
+  color: #a855f7;
+}
+
+.about-heading-decoration span {
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #7c3aed
+  );
+}
+
+.about-heading-decoration span:last-child {
+  background: linear-gradient(
+    90deg,
+    #7c3aed,
+    transparent
+  );
+}
+
+.about-heading-decoration svg {
+  width: 21px;
+  height: 21px;
+  filter: drop-shadow(
+    0 0 7px rgba(168, 85, 247, 0.7)
+  );
+}
+
+.about-heading h2 {
+  margin: 0;
+  padding-bottom: 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 15%,
+    #e9d5ff 55%,
+    #a855f7 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-heading p {
+  max-width: 580px;
+  margin: 7px 0 0;
+  color: #b8b2cc;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
 }
 
 .about-left {
-  max-width: 750px;
+  width: 100%;
+  max-width: 850px;
+  padding: 25px;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(168, 85, 247, 0.7);
+  border-radius: 17px;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(124, 58, 237, 0.1),
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #09070d,
+      #050507
+    );
+
+  box-shadow:
+    0 0 28px rgba(124, 58, 237, 0.08);
 
   opacity: 0;
-  transform: translateX(-80px);
-  animation: slideAbout 0.8s ease forwards;
+  transform: translateY(10px);
+  animation: aboutAppear 0.5s ease forwards;
 }
 
 .about-tag {
+  margin: 0 0 10px;
   color: #a855f7;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 3px;
-  margin-bottom: 12px;
 }
 
 .about-title {
-  font-size: 42px;
-  line-height: 1.2;
-  margin: 0 0 28px 0;
+  margin: 0 0 22px;
   color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .purple {
-  background: linear-gradient(90deg, #a855f7, #5d00ba, #46006f);
+  background: linear-gradient(
+    90deg,
+    #a855f7,
+    #5d00ba,
+    #46006f
+  );
+
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -53,58 +154,190 @@
 .about-texts {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .about-text {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #d4d4d4;
   margin: 0;
-  max-width: 700px;
+  color: #aaa3bd;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-@keyframes slideAbout {
+@keyframes aboutAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  .about {
-    min-height: auto;
-    padding: 60px 40px;
+@media (max-width: 900px) {
+  .about-section {
+    padding: 32px 4% 36px;
+  }
+
+  .about-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-heading p {
+    max-width: 520px;
+    font-size: 12px;
   }
 
   .about-left {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .about-tag,
-  .about-title {
-    text-align: center;
+    padding: 20px;
   }
 
   .about-title {
-    font-size: 30px;
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-section {
+    padding: 28px 5% 32px;
   }
 
-  .about-tag {
-    font-size: 12px;
-    letter-spacing: 2px;
+  .about-heading {
+    margin-bottom: 25px;
   }
 
-  .about-texts {
-    max-width: 80%;
-    margin: 0 auto;
-    gap: 16px;
+  .about-heading-decoration {
+    gap: 7px;
+  }
+
+  .about-heading-decoration span {
+    width: 65px;
+  }
+
+  .about-heading-decoration svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .about-heading h2 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+
+  .about-heading p {
+    max-width: 450px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .about-left {
+    padding: 17px;
+    border-radius: 14px;
+  }
+
+  .about-title {
+    font-size: 23px;
   }
 
   .about-text {
-    font-size: 16px;
-    line-height: 1.7;
-    text-align: justify;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 24px 4% 28px;
+  }
+
+  .about-heading {
+    margin-bottom: 20px;
+  }
+
+  .about-heading-decoration {
+    gap: 5px;
+    margin-bottom: 4px;
+  }
+
+  .about-heading-decoration span {
+    width: 45px;
+  }
+
+  .about-heading-decoration svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .about-heading h2 {
+    font-size: 1.75rem;
+    padding-bottom: 4px;
+  }
+
+  .about-heading p {
+    max-width: 330px;
+    margin-top: 5px;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .about-left {
+    padding: 14px;
+    border-radius: 13px;
+  }
+
+  .about-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .about-title {
+    font-size: 20px;
+    margin-bottom: 17px;
+  }
+
+  .about-texts {
+    gap: 12px;
+  }
+
+  .about-text {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 380px) {
+  .about-section {
+    padding: 20px 3% 24px;
+  }
+
+  .about-heading h2 {
+    font-size: 1.55rem;
+  }
+
+  .about-heading p {
+    font-size: 9px;
+  }
+
+  .about-heading-decoration span {
+    width: 35px;
+  }
+
+  .about-heading-decoration svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .about-left {
+    padding: 11px;
+  }
+
+  .about-title {
+    font-size: 18px;
+  }
+
+  .about-text {
+    font-size: 8px;
   }
 }
