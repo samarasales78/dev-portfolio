@@ -4,16 +4,32 @@ import { ProjectCard } from "../components/ProjectCard";
 import "./projects.css";
 import "../components/project-card.css";
 
+type ProjectCategory = "Web" | "Mobile" | "Backend" | "Outros";
+
+interface Project {
+  image: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  category: ProjectCategory;
+  projectUrl?: string;
+  codeUrl?: string;
+}
+
 export function Projects() {
   const [current, setCurrent] = useState(0);
+  const [activeCategory, setActiveCategory] = useState<
+    "Todos" | ProjectCategory
+  >("Todos");
 
-  const projects = [
+  const projects: Project[] = [
     {
       image: "/goldengallery.png",
       title: "Visual Diary",
       description:
         "Galeria digital de desenhos com sistema de filtros por estilo e ano.",
       technologies: ["TypeScript", "JavaScript", "CSS", "HTML"],
+      category: "Web",
       projectUrl:
         "https://samarasales78.github.io/golden-galleryTS/",
       codeUrl:
@@ -25,6 +41,7 @@ export function Projects() {
       description:
         "Portfólio pessoal desenvolvido para apresentar projetos, tecnologias e informações profissionais.",
       technologies: ["React", "TypeScript", "CSS", "HTML"],
+      category: "Web",
       projectUrl:
         "https://dev-portfolio-five-ashy.vercel.app/",
       codeUrl:
@@ -36,6 +53,7 @@ export function Projects() {
       description:
         "Biblioteca de estruturas de dados desenvolvida em Java para estudos e prática de algoritmos.",
       technologies: ["Java"],
+      category: "Backend",
       codeUrl:
         "https://github.com/samarasales78/data-structures-library",
     },
@@ -45,14 +63,30 @@ export function Projects() {
       description:
         "Sistema de biblioteca desenvolvido para gerenciamento e organização de livros.",
       technologies: ["Java"],
+      category: "Backend",
       codeUrl:
         "https://github.com/samarasales78/bibliotech",
     },
   ];
 
+  const categories: ("Todos" | ProjectCategory)[] = [
+    "Todos",
+    "Web",
+    "Mobile",
+    "Backend",
+    "Outros",
+  ];
+
+  const filteredProjects =
+    activeCategory === "Todos"
+      ? projects
+      : projects.filter(
+          (project) => project.category === activeCategory
+        );
+
   const nextProject = () => {
     setCurrent((currentProject) =>
-      currentProject === projects.length - 1
+      currentProject === filteredProjects.length - 1
         ? 0
         : currentProject + 1
     );
@@ -61,9 +95,16 @@ export function Projects() {
   const previousProject = () => {
     setCurrent((currentProject) =>
       currentProject === 0
-        ? projects.length - 1
+        ? filteredProjects.length - 1
         : currentProject - 1
     );
+  };
+
+  const handleCategoryChange = (
+    category: "Todos" | ProjectCategory
+  ) => {
+    setActiveCategory(category);
+    setCurrent(0);
   };
 
   return (
@@ -88,84 +129,86 @@ export function Projects() {
         </div>
 
         <div className="projects-categories">
-          <button className="category active">
-            Todos
-          </button>
-
-          <button className="category">
-            Web
-          </button>
-
-          <button className="category">
-            Mobile
-          </button>
-
-          <button className="category">
-            Backend
-          </button>
-
-          <button className="category">
-            Outros
-          </button>
-        </div>
-
-        <div className="project-carousel-wrapper">
-          <button
-            className="project-arrow project-arrow-left"
-            onClick={previousProject}
-            aria-label="Projeto anterior"
-          >
-            ←
-          </button>
-
-          <div className="project-carousel">
-            <div
-              className="project-track"
-              style={{
-                transform: `translateX(-${current * 100}%)`,
-              }}
-            >
-              {projects.map((project) => (
-                <div
-                  className="project-slide"
-                  key={project.title}
-                >
-                  <ProjectCard
-                    image={project.image}
-                    title={project.title}
-                    description={project.description}
-                    technologies={project.technologies}
-                    projectUrl={project.projectUrl}
-                    codeUrl={project.codeUrl}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button
-            className="project-arrow project-arrow-right"
-            onClick={nextProject}
-            aria-label="Próximo projeto"
-          >
-            →
-          </button>
-        </div>
-
-        <div className="project-indicators">
-          {projects.map((project, index) => (
+          {categories.map((category) => (
             <button
-              key={project.title}
+              key={category}
               className={
-                current === index
-                  ? "project-indicator active"
-                  : "project-indicator"
+                activeCategory === category
+                  ? "category active"
+                  : "category"
               }
-              onClick={() => setCurrent(index)}
-              aria-label={`Ir para ${project.title}`}
-            />
+              onClick={() => handleCategoryChange(category)}
+              type="button"
+            >
+              {category}
+            </button>
           ))}
         </div>
+
+        {filteredProjects.length > 0 && (
+          <>
+            <div className="project-carousel-wrapper">
+              <button
+                className="project-arrow project-arrow-left"
+                onClick={previousProject}
+                aria-label="Projeto anterior"
+                type="button"
+              >
+                ←
+              </button>
+
+              <div className="project-carousel">
+                <div
+                  className="project-track"
+                  style={{
+                    transform: `translateX(-${current * 100}%)`,
+                  }}
+                >
+                  {filteredProjects.map((project) => (
+                    <div
+                      className="project-slide"
+                      key={project.title}
+                    >
+                      <ProjectCard
+                        image={project.image}
+                        title={project.title}
+                        description={project.description}
+                        technologies={project.technologies}
+                        projectUrl={project.projectUrl}
+                        codeUrl={project.codeUrl}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                className="project-arrow project-arrow-right"
+                onClick={nextProject}
+                aria-label="Próximo projeto"
+                type="button"
+              >
+                →
+              </button>
+            </div>
+
+            <div className="project-indicators">
+              {filteredProjects.map((project, index) => (
+                <button
+                  key={project.title}
+                  className={
+                    current === index
+                      ? "project-indicator active"
+                      : "project-indicator"
+                  }
+                  onClick={() => setCurrent(index)}
+                  aria-label={`Ir para ${project.title}`}
+                  type="button"
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );
