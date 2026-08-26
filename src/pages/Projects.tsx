@@ -13,7 +13,7 @@ interface Project {
   technologies: string[];
   category: ProjectCategory;
   projectUrl?: string;
-  codeUrl?: string;
+  codeUrl: string;
 }
 
 export function Projects() {
