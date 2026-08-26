@@ -1,3 +1,4 @@
+import { FaEnvelope, FaFileArrowDown } from "react-icons/fa6";
 import "./home.css";
 
 export function Home() {
@@ -27,10 +28,16 @@ export function Home() {
 
           <a href="#contact" className="btn-contact">
             Entrar em Contato
+            <FaEnvelope />
           </a>
 
-          <a href="/curriculo.pdf" className="btn-contact mobile-cv" download>
+          <a
+            href="/curriculo.pdf"
+            className="btn-contact mobile-cv"
+            download
+          >
             Baixar CV
+            <FaFileArrowDown />
           </a>
         </div>
 

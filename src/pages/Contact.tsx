@@ -11,9 +11,12 @@ import {
   FaPen,
 } from "react-icons/fa6";
 import { Code2 } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import "./contact.css";
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm("xwlegdlz");
+
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
@@ -123,61 +126,117 @@ export default function Contact() {
           </aside>
 
           <div className="contact-form-card">
-            <div className="contact-form-title">
-              <h3>Envie uma mensagem</h3>
+            {state.succeeded ? (
+              <div className="contact-success">
+                <h3>Mensagem enviada!</h3>
 
-              <p>
-                Preencha o formulário abaixo e entrarei em contato assim
-                que possível.
-              </p>
-            </div>
+                <p>
+                  Obrigada pelo contato. Responderei assim que possível.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="contact-form-title">
+                  <h3>Envie uma mensagem</h3>
 
-            <form
-              className="contact-form"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="contact-input-row">
-                <div className="contact-field">
-                  <FaUser />
-
-                  <input
-                    type="text"
-                    placeholder="Seu nome"
-                  />
+                  <p>
+                    Preencha o formulário abaixo e entrarei em contato assim
+                    que possível.
+                  </p>
                 </div>
 
-                <div className="contact-field">
-                  <FaEnvelope />
+                <form
+                  className="contact-form"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="contact-input-row">
+                    <div className="contact-field">
+                      <FaUser />
 
-                  <input
-                    type="email"
-                    placeholder="Seu e-mail"
-                  />
-                </div>
-              </div>
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Seu nome"
+                        required
+                      />
 
-              <div className="contact-field contact-field-full">
-                <FaTag />
+                      <ValidationError
+                        prefix="Nome"
+                        field="name"
+                        errors={state.errors}
+                      />
+                    </div>
 
-                <input
-                  type="text"
-                  placeholder="Assunto"
-                />
-              </div>
+                    <div className="contact-field">
+                      <FaEnvelope />
 
-              <div className="contact-field contact-textarea">
-                <FaPen />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Seu e-mail"
+                        required
+                      />
 
-                <textarea placeholder="Sua mensagem"></textarea>
-              </div>
+                      <ValidationError
+                        prefix="E-mail"
+                        field="email"
+                        errors={state.errors}
+                      />
+                    </div>
+                  </div>
 
-              <div className="contact-button-area">
-                <button type="submit">
-                  <FaPaperPlane />
-                  Enviar mensagem
-                </button>
-              </div>
-            </form>
+                  <div className="contact-field contact-field-full">
+                    <FaTag />
+
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="Assunto"
+                      required
+                    />
+
+                    <ValidationError
+                      prefix="Assunto"
+                      field="subject"
+                      errors={state.errors}
+                    />
+                  </div>
+
+                  <div className="contact-field contact-textarea">
+                    <FaPen />
+
+                    <textarea
+                      name="message"
+                      placeholder="Sua mensagem"
+                      required
+                    ></textarea>
+
+                    <ValidationError
+                      prefix="Mensagem"
+                      field="message"
+                      errors={state.errors}
+                    />
+                  </div>
+
+                  <div className="contact-button-area">
+                    <button
+                      type="submit"
+                      disabled={state.submitting}
+                    >
+                      <FaPaperPlane />
+
+                      {state.submitting
+                        ? "Enviando..."
+                        : "Enviar mensagem"}
+                    </button>
+                  </div>
+
+                  {state.errors && (
+                    <ValidationError errors={state.errors} />
+                  )}
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>

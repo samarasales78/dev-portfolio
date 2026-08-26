@@ -76,9 +76,11 @@
   vertical-align: bottom;
   border-right: 3px solid #a855f7;
   width: 0;
+
   animation:
     typingLoop 7s steps(26, end) infinite,
     blink 0.8s step-end infinite;
+
   animation-delay: 1s;
 }
 
@@ -379,13 +381,35 @@
   .line {
     font-size: 17px;
   }
+
+  .contact-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 210px;
+    text-align: center;
+  }
+  
+  .contact-success h3 {
+    margin: 0 0 8px;
+    color: #c084fc;
+    font-size: 1.2rem;
+  }
+  
+  .contact-success p {
+    margin: 0;
+    color: #aaa6b6;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 }
 
 /* MOBILE */
 
 @media (max-width: 768px) {
   .home {
-    min-height: auto;
+    min-height: calc(100vh - 60px);
     height: auto;
 
     display: flex;
@@ -396,7 +420,7 @@
 
     gap: 0;
 
-    padding: 115px 5% 20px;
+    padding: 145px 5% 100px;
 
     box-sizing: border-box;
     overflow: visible;
@@ -412,7 +436,7 @@
   .line {
     width: 100%;
     text-align: center;
-    font-size: 19px;
+    font-size: 20px;
     line-height: 1.15;
   }
 
@@ -429,9 +453,9 @@
 
     width: 100%;
 
-    margin: 5px 0;
+    margin: 6px 0;
 
-    font-size: clamp(58px, 15vw, 82px);
+    font-size: clamp(62px, 16vw, 86px);
     line-height: 0.88;
     letter-spacing: -3px;
 
@@ -443,7 +467,7 @@
 
     margin-top: 5px;
 
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.15;
   }
 
@@ -461,7 +485,7 @@
 
     position: relative;
 
-    margin: -55px 0 -50px;
+    margin: -58px 0 -52px;
 
     z-index: 1;
   }
@@ -470,11 +494,11 @@
     display: block;
 
     width: 100%;
-    max-width: 430px;
+    max-width: 440px;
+
     height: auto;
 
     image-rendering: pixelated;
-
     transform: none;
   }
 
@@ -487,7 +511,7 @@
 
     width: 100%;
 
-    gap: 2px;
+    gap: 3px;
 
     margin-top: -8px;
 
@@ -505,13 +529,12 @@
 
   .btn-projects,
   .btn-contact {
-    width: 210px;
-
-    min-height: 41px;
+    width: 215px;
+    min-height: 43px;
 
     box-sizing: border-box;
 
-    padding: 7px 18px;
+    padding: 8px 18px;
 
     font-size: 15px;
 
@@ -520,11 +543,11 @@
   }
 
   .btn-projects span {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .btn-contact span {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .social-icons {
@@ -537,15 +560,71 @@
 
     gap: 13px;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
     position: relative;
     z-index: 3;
   }
 
   .social-icons a {
-    width: 43px;
-    height: 43px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-icons img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    min-height: calc(100vh - 55px);
+    padding: 135px 5% 95px;
+  }
+
+  .line {
+    font-size: 19px;
+  }
+
+  .name {
+    font-size: 64px;
+    margin: 5px 0;
+  }
+
+  .line-bottom {
+    font-size: 18px;
+    margin-top: 4px;
+  }
+
+  .hero-right {
+    margin: -60px 0 -55px;
+  }
+
+  .pixel-art {
+    max-width: 405px;
+  }
+
+  .hero-buttons {
+    gap: 3px;
+    margin-top: -8px;
+  }
+
+  .btn-projects,
+  .btn-contact {
+    width: 205px;
+    min-height: 42px;
+    padding: 8px 17px;
+    font-size: 15px;
+  }
+
+  .social-icons {
+    margin-top: 6px;
+  }
+
+  .social-icons a {
+    width: 42px;
+    height: 42px;
   }
 
   .social-icons img {
@@ -554,9 +633,10 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .home {
-    padding: 105px 5% 18px;
+    min-height: calc(100vh - 50px);
+    padding: 125px 5% 90px;
   }
 
   .line {
@@ -565,7 +645,7 @@
 
   .name {
     font-size: 60px;
-    margin: 5px 0;
+    margin: 4px 0;
   }
 
   .line-bottom {
@@ -574,28 +654,29 @@
   }
 
   .hero-right {
-    margin: -58px 0 -53px;
+    margin: -55px 0 -50px;
   }
 
   .pixel-art {
-    max-width: 390px;
+    max-width: 375px;
   }
 
   .hero-buttons {
-    gap: 2px;
-    margin-top: -8px;
+    gap: 3px;
+    margin-top: -7px;
   }
 
   .btn-projects,
   .btn-contact {
     width: 200px;
-    min-height: 40px;
-    padding: 7px 17px;
+    min-height: 41px;
+    padding: 7px 16px;
     font-size: 14px;
   }
 
   .social-icons {
-    margin-top: 5px;
+    margin-top: 6px;
+    gap: 11px;
   }
 
   .social-icons a {
@@ -609,9 +690,10 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   .home {
-    padding: 95px 5% 16px;
+    min-height: calc(100vh - 45px);
+    padding: 115px 5% 85px;
   }
 
   .line {
@@ -619,98 +701,42 @@
   }
 
   .name {
-    font-size: 57px;
-    margin: 4px 0;
+    font-size: 56px;
   }
 
   .line-bottom {
     font-size: 16px;
-    margin-top: 4px;
   }
 
   .hero-right {
-    margin: -52px 0 -48px;
+    margin: -50px 0 -45px;
   }
 
   .pixel-art {
-    max-width: 360px;
+    max-width: 340px;
   }
 
   .hero-buttons {
     gap: 2px;
-    margin-top: -7px;
-  }
-
-  .btn-projects,
-  .btn-contact {
-    width: 195px;
-    min-height: 39px;
-    padding: 6px 16px;
-    font-size: 14px;
-  }
-
-  .social-icons {
-    margin-top: 5px;
-    gap: 11px;
-  }
-
-  .social-icons a {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-icons img {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 380px) {
-  .home {
-    padding: 85px 5% 14px;
-  }
-
-  .line {
-    font-size: 16px;
-  }
-
-  .name {
-    font-size: 52px;
-  }
-
-  .line-bottom {
-    font-size: 15px;
-  }
-
-  .hero-right {
-    margin: -47px 0 -43px;
-  }
-
-  .pixel-art {
-    max-width: 325px;
-  }
-
-  .hero-buttons {
-    gap: 1px;
     margin-top: -6px;
   }
 
   .btn-projects,
   .btn-contact {
-    width: 185px;
-    min-height: 38px;
-    padding: 6px 15px;
+    width: 190px;
+    min-height: 40px;
+    padding: 7px 15px;
     font-size: 13px;
   }
 
   .social-icons {
-    margin-top: 4px;
+    margin-top: 5px;
     gap: 10px;
   }
 
   .social-icons a {
-    width: 38px;
-    height: 38px;
+    width: 39px;
+    height: 39px;
   }
 
   .social-icons img {

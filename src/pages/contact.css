@@ -1,6 +1,6 @@
 .contact {
   min-height: 100vh;
-  padding: 36px 5% 90px;
+  padding: 20px 5% 70px;
   background: #000;
   color: #fff;
   position: relative;
@@ -338,7 +338,7 @@
 
 @media (max-width: 900px) {
   .contact {
-    padding: 32px 4% 80px;
+    padding: 105px 4% 65px;
   }
 
   .contact-heading {
@@ -366,11 +366,11 @@
 
 @media (max-width: 700px) {
   .contact {
-    padding: 28px 5% 70px;
+    padding: 95px 5% 55px;
   }
 
   .contact-heading {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .contact-heading-decoration {
@@ -421,11 +421,11 @@
 
 @media (max-width: 480px) {
   .contact {
-    padding: 24px 4% 65px;
+    padding: 88px 4% 50px;
   }
 
   .contact-heading {
-    margin-bottom: 28px;
+    margin-bottom: 25px;
   }
 
   .contact-heading-decoration {
@@ -477,11 +477,11 @@
 
 @media (max-width: 380px) {
   .contact {
-    padding: 20px 3% 58px;
+    padding: 82px 3% 45px;
   }
 
   .contact-heading {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
 
   .contact-heading h2 {
