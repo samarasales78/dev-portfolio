@@ -11,14 +11,43 @@ import {
   FaPen,
 } from "react-icons/fa6";
 import { Code2 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import "./contact.css";
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("xwlegdlz");
+  const contactRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = contactRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="contact" id="contact">
+    <section
+      ref={contactRef}
+      className={`contact ${isVisible ? "is-visible" : ""}`}
+      id="contact"
+    >
       <div className="contact-container">
         <div className="contact-heading">
           <div className="contact-heading-decoration">

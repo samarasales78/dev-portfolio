@@ -1,9 +1,39 @@
+import { useEffect, useRef, useState } from "react";
 import "./about.css";
 import { Code2 } from "lucide-react";
 
 export function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="about-section">
+    <section
+      ref={sectionRef}
+      id="about"
+      className={`about-section ${isVisible ? "about-visible" : ""}`}
+    >
       <div className="about-container">
         <div className="about-heading">
           <div className="about-heading-decoration">
@@ -15,8 +45,8 @@ export function About() {
           <h2>Sobre Mim</h2>
 
           <p>
-            Conheça um pouco mais sobre minha trajetória e minha forma de
-            desenvolver soluções através da tecnologia.
+            Conheça minha trajetória, experiência e atuação no desenvolvimento
+            de software.
           </p>
         </div>
 
@@ -25,29 +55,30 @@ export function About() {
             <p className="about-tag">SOBRE MIM</p>
 
             <h3 className="about-title">
-              Desenvolvendo{" "}
-              <span className="purple">soluções completas</span> com tecnologia
+              Desenvolvimento de software com{" "}
+              <span className="purple">experiência prática</span> e visão
+              multidisciplinar
             </h3>
 
             <div className="about-texts">
               <p className="about-text">
                 Sou estudante de Análise e Desenvolvimento de Sistemas na UEPB,
-                com interesse em desenvolver soluções completas e funcionais
-                através da tecnologia.
+                com experiência como estagiária no HUAC/UFCG e participação em
+                projetos voltados a demandas reais no ambiente institucional.
               </p>
 
               <p className="about-text">
-                Tenho experiência com JavaScript, TypeScript, React, Python,
-                Java e Flutter, criando interfaces dinâmicas e responsivas,
-                além de fortalecer minha base em lógica de programação e
-                estruturação de aplicações.
+                Trabalho com React, TypeScript, JavaScript, Python, Java,
+                Tailwind CSS e Flutter, desenvolvendo aplicações web e
+                explorando diferentes abordagens de front-end e back-end. Também
+                possuo experiência com integração e consumo de APIs.
               </p>
 
               <p className="about-text">
-                Busco evoluir constantemente em diferentes áreas do
-                desenvolvimento de software, ampliando minhas habilidades para
-                transformar ideias em projetos modernos, eficientes e bem
-                estruturados.
+                Ao longo da minha formação, venho construindo projetos próprios
+                e aplicando diferentes tecnologias na prática, com foco em
+                aplicações funcionais, interfaces responsivas, integração de
+                dados e código bem estruturado.
               </p>
             </div>
           </div>

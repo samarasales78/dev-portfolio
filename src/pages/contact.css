@@ -20,6 +20,8 @@
   align-items: center;
   text-align: center;
   margin-bottom: 17px;
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 .contact-heading-decoration {
@@ -101,6 +103,8 @@
 
 .contact-info {
   width: 100%;
+  opacity: 0;
+  transform: translateX(-28px);
 }
 
 .contact-intro h3,
@@ -210,6 +214,8 @@
   background: rgba(14, 12, 24, 0.9);
   box-shadow:
     inset 0 0 18px rgba(168, 85, 247, 0.04);
+  opacity: 0;
+  transform: translateX(28px);
 }
 
 .contact-form-title {
@@ -357,6 +363,71 @@
   color: #aaa6b6;
   font-size: 0.8rem;
   line-height: 1.5;
+}
+
+/* Animação da seção */
+
+.contact.is-visible .contact-heading {
+  animation: contactHeadingIn 0.65s ease-out forwards;
+}
+
+.contact.is-visible .contact-info {
+  animation: contactInfoIn 0.7s 0.15s ease-out forwards;
+}
+
+.contact.is-visible .contact-form-card {
+  animation: contactFormIn 0.7s 0.25s ease-out forwards;
+}
+
+@keyframes contactHeadingIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contactInfoIn {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contactFormIn {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-heading,
+  .contact-info,
+  .contact-form-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact.is-visible .contact-heading,
+  .contact.is-visible .contact-info,
+  .contact.is-visible .contact-form-card {
+    animation: none;
+  }
 }
 
 @media (max-width: 1000px) {

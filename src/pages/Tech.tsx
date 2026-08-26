@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Code2,
   Database,
@@ -228,10 +228,7 @@ function CategoryCard({
           onClick={onClick}
           aria-label={`Ver ${data.title}`}
         >
-          <ArrowRight
-            className="category-arrow"
-            size={18}
-          />
+          <ArrowRight className="category-arrow" size={18} />
         </button>
       </div>
 
@@ -305,12 +302,42 @@ export default function Tech() {
   const [activeCategory, setActiveCategory] =
     useState<Category>("Todas");
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleCategoryChange = (category: Category) => {
     setActiveCategory(category);
   };
 
   return (
-    <section id="tech" className="tech-section">
+    <section
+      ref={sectionRef}
+      id="tech"
+      className={`tech-section ${isVisible ? "tech-visible" : ""}`}
+    >
       <div className="tech-container">
         <div className="tech-heading">
           <div className="tech-heading-decoration">
@@ -338,9 +365,7 @@ export default function Tech() {
                 key={category.name}
                 type="button"
                 className={`tech-tab ${
-                  activeCategory === category.name
-                    ? "active"
-                    : ""
+                  activeCategory === category.name ? "active" : ""
                 }`}
                 onClick={() =>
                   handleCategoryChange(category.name)
