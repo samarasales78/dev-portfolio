@@ -2,10 +2,20 @@ import { FaEnvelope, FaFileArrowDown } from "react-icons/fa6";
 import "./home.css";
 
 export function Home() {
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+
+    link.href = "/curriculo.pdf";
+    link.download = "Curriculo-Samara-Sales.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="home">
       <div className="hero-left">
-
         <p className="line line-top">
           <span className="purple">• OLÁ, MEU NOME É</span>
         </p>
@@ -31,14 +41,14 @@ export function Home() {
             <FaEnvelope />
           </a>
 
-          <a
-            href="/curriculo.pdf"
+          <button
+            type="button"
             className="btn-contact mobile-cv"
-            download
+            onClick={handleDownloadCV}
           >
             Baixar CV
             <FaFileArrowDown />
-          </a>
+          </button>
         </div>
 
         <div className="social-icons">
@@ -66,7 +76,6 @@ export function Home() {
             />
           </a>
         </div>
-
       </div>
 
       <div className="hero-right">

@@ -27,7 +27,7 @@ export function Projects() {
       image: "/goldengallery.png",
       title: "Visual Diary",
       description:
-        "Galeria digital de desenhos com sistema de filtros por estilo e ano.",
+        "Galeria digital de desenhos com filtros dinâmicos por estilo e ano, explorando organização de conteúdo e navegação.",
       technologies: ["TypeScript", "JavaScript", "CSS", "HTML"],
       category: "Web",
       projectUrl:
@@ -36,16 +36,54 @@ export function Projects() {
         "https://github.com/samarasales78/golden-galleryTS",
     },
     {
+      image: "/hospital-system.png",
+      title: "Hospital System",
+      description:
+        "Sistema hospitalar full stack desenvolvido com C# e ASP.NET Core, integrado a React, API REST e banco de dados SQL.",
+      technologies: [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "React",
+        "TypeScript",
+        "SQL",
+        "REST API",
+      ],
+      category: "Web",
+      projectUrl:
+        "https://frontend-eight-lake-84.vercel.app/",
+      codeUrl:
+        "https://github.com/samarasales78/hospital_system",
+    },
+    {
       image: "/dev-portfolio.png",
       title: "Dev Portfolio",
       description:
-        "Portfólio pessoal desenvolvido para apresentar projetos, tecnologias e informações profissionais.",
+        "Portfólio pessoal desenvolvido para apresentar projetos, tecnologias e informações profissionais com interface responsiva.",
       technologies: ["React", "TypeScript", "CSS", "HTML"],
       category: "Web",
       projectUrl:
         "https://dev-portfolio-five-ashy.vercel.app/",
       codeUrl:
         "https://github.com/samarasales78/dev-portfolio",
+    },
+    {
+      image: "/bookly.png",
+      title: "Bookly",
+      description:
+        "Biblioteca digital integrada à Open Library API, com busca, filtros, categorias e acompanhamento do progresso de leitura.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "REST API",
+      ],
+      category: "Web",
+      projectUrl:
+        "https://bookly-chi-seven.vercel.app/",
+      codeUrl:
+        "https://github.com/samarasales78/bookly",
     },
     {
       image: "/data-structures-library.png",
@@ -56,16 +94,6 @@ export function Projects() {
       category: "Backend",
       codeUrl:
         "https://github.com/samarasales78/data-structures-library",
-    },
-    {
-      image: "/bibliotech.png",
-      title: "BiblioTech",
-      description:
-        "Sistema de biblioteca desenvolvido para gerenciamento e organização de livros.",
-      technologies: ["Java"],
-      category: "Backend",
-      codeUrl:
-        "https://github.com/samarasales78/bibliotech",
     },
   ];
 

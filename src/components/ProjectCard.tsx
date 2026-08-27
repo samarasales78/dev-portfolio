@@ -14,7 +14,11 @@ import {
   SiFlutter,
   SiDart,
   SiPython,
+  SiSharp,
+  SiTailwindcss,
 } from "react-icons/si";
+
+import { Database } from "lucide-react";
 
 interface ProjectCardProps {
   image: string;
@@ -64,6 +68,15 @@ export function ProjectCard({
 
       case "Dart":
         return <SiDart />;
+
+      case "C#":
+        return <SiSharp />;
+
+      case "Tailwind CSS":
+        return <SiTailwindcss />;
+
+      case "SQL":
+        return <Database size={16} />;
 
       default:
         return null;

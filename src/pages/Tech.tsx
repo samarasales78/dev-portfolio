@@ -75,6 +75,11 @@ const technologies: Record<Category, CategoryData | null> = {
         icon:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
       },
+      {
+        name: "Tailwind CSS",
+        icon:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
     ],
   },
 
@@ -90,6 +95,16 @@ const technologies: Record<Category, CategoryData | null> = {
       "Construção da lógica de negócio",
     ],
     technologies: [
+      {
+        name: "C#",
+        icon:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      },
+      {
+        name: ".NET",
+        icon:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+      },
       {
         name: "Python",
         icon:
@@ -126,7 +141,12 @@ const technologies: Record<Category, CategoryData | null> = {
     ],
     technologies: [
       {
-        name: "MySQL",
+        name: "PostgreSQL",
+        icon:
+          "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      },
+      {
+        name: "SQL",
         icon:
           "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
       },
