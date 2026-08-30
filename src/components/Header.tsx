@@ -7,7 +7,8 @@ export function Header() {
   return (
     <header className="header">
       <h1 className="logo">
-        <span className="logo-white">Port</span><span className="logo-purple">folio</span>
+        <span className="logo-white">Port</span>
+        <span className="logo-purple">folio</span>
         <span className="logo-symbol">&lt;/&gt;</span>
       </h1>
 
@@ -45,7 +46,8 @@ export function Header() {
 
       <a
         href="/curriculo.pdf"
-        download
+        target="_blank"
+        rel="noopener noreferrer"
         className="cv-button"
       >
         Baixar CV <span>⇩</span>
