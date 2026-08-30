@@ -2,7 +2,7 @@
 O site foi desenvolvido com foco em uma apresentação profissional, moderna e responsiva, reunindo informações sobre minha formação, tecnologias e projetos em um único espaço.
 
 ## Acesso
-"Ver portfólio" (https://dev-portfolio-five-ashy.vercel.app/)
+https://dev-portfolio-five-ashy.vercel.app/
 
 ## Tecnologias
 
